@@ -88,7 +88,6 @@ class RenderAuthors(Task):
         }
 
         yield self.group_task()
-        self.site.scan_posts()
 
         if self.generate_author_pages:
             yield self.list_authors_page(kw)
