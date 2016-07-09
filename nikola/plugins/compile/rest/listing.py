@@ -110,7 +110,7 @@ class CodeBlock(Directive):
 
         formatter = utils.NikolaPygmentsHTML(anchor_ref=anchor_ref, classes=classes, linenos=linenos, linenostart=linenostart)
         out = pygments.highlight(code, lexer, formatter)
-        node = nodes.raw('', out, format='html')
+        node = nodes.literal_block(out, out)
 
         self.add_name(node)
         # if called from "include", set the source
